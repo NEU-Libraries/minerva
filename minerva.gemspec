@@ -8,10 +8,10 @@ Gem::Specification.new do |spec|
   spec.name        = "minerva"
   spec.version     = Minerva::VERSION
   spec.authors     = ["David Cliff"]
-  spec.email       = ["d.cliff@neu.edu"]
-  spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of Minerva."
-  spec.description = "TODO: Description of Minerva."
+  spec.email       = ["dgcliff@northeastern.edu"]
+  spec.homepage    = "https://github.com/NEU-Libraries/minerva"
+  spec.summary     = "Minerva is a Rails engine for basic assignment workflow."
+  spec.description = "In concert with Samvera and Valkyrie componenets, Minerva aims to be a viable coordination tool, allowing administration users to describe manual and automated workflows for individuals to follow and apply." 
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
