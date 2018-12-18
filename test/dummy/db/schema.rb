@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_18_183615) do
+ActiveRecord::Schema.define(version: 2018_12_18_183728) do
+
+  create_table "minerva_assignments", force: :cascade do |t|
+    t.string "title"
+    t.integer "interface_id"
+    t.boolean "automated"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["interface_id"], name: "index_minerva_assignments_on_interface_id"
+  end
 
   create_table "minerva_interfaces", force: :cascade do |t|
     t.string "title"
