@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_18_183728) do
+ActiveRecord::Schema.define(version: 2018_12_18_183815) do
 
   create_table "minerva_assignments", force: :cascade do |t|
     t.string "title"
@@ -26,6 +26,23 @@ ActiveRecord::Schema.define(version: 2018_12_18_183728) do
     t.string "code_point"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "minerva_states", force: :cascade do |t|
+    t.integer "creator_id"
+    t.integer "user_id"
+    t.integer "role_id"
+    t.integer "work_id"
+    t.integer "assignment_id"
+    t.integer "status_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["assignment_id"], name: "index_minerva_states_on_assignment_id"
+    t.index ["creator_id"], name: "index_minerva_states_on_creator_id"
+    t.index ["role_id"], name: "index_minerva_states_on_role_id"
+    t.index ["status_id"], name: "index_minerva_states_on_status_id"
+    t.index ["user_id"], name: "index_minerva_states_on_user_id"
+    t.index ["work_id"], name: "index_minerva_states_on_work_id"
   end
 
   create_table "minerva_statuses", force: :cascade do |t|
