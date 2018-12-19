@@ -28,4 +28,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rails", "~> 5.2.2"
 
   spec.add_development_dependency "sqlite3"
+  spec.add_development_dependency "capybara"
+  spec.add_development_dependency "selenium-webdriver"
+  spec.add_development_dependency "chromedriver-helper"
+  spec.add_development_dependency "puma"
 end
