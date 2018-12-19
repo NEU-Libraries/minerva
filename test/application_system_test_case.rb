@@ -1,6 +1,4 @@
 require "test_helper"
-require 'capybara/rails'
-require "selenium/webdriver"
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(

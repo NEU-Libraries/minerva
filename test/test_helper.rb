@@ -6,6 +6,11 @@ ActiveRecord::Migrator.migrations_paths = [File.expand_path("../test/dummy/db/mi
 ActiveRecord::Migrator.migrations_paths << File.expand_path('../db/migrate', __dir__)
 require "rails/test_help"
 
+require 'capybara/rails'
+require "selenium/webdriver"
+
+Capybara.server = :puma, { Silent: true } # To clean up your test output
+
 # Filter out Minitest backtrace while allowing backtrace from other libraries
 # to be shown.
 Minitest.backtrace_filter = Minitest::BacktraceFilter.new

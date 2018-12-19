@@ -7,15 +7,16 @@ module Minerva
     end
 
     test "visiting the index" do
-      visit assignments_url
+      visit minerva.assignments_url
       assert_selector "h1", text: "Assignments"
     end
 
     test "creating a Assignment" do
-      visit assignments_url
+      visit minerva.assignments_url
       click_on "New Assignment"
 
-      fill_in "Automated", with: @assignment.automated
+      # fill_in "Automated", with: @assignment.automated
+      @assignment.automated ? check("Automated") : uncheck("Automated")
       fill_in "Interface", with: @assignment.interface_id
       fill_in "Title", with: @assignment.title
       click_on "Create Assignment"
@@ -25,10 +26,11 @@ module Minerva
     end
 
     test "updating a Assignment" do
-      visit assignments_url
+      visit minerva.assignments_url
       click_on "Edit", match: :first
 
-      fill_in "Automated", with: @assignment.automated
+      # fill_in "Automated", with: @assignment.automated
+      @assignment.automated ? check("Automated") : uncheck("Automated")
       fill_in "Interface", with: @assignment.interface_id
       fill_in "Title", with: @assignment.title
       click_on "Update Assignment"
@@ -38,7 +40,7 @@ module Minerva
     end
 
     test "destroying a Assignment" do
-      visit assignments_url
+      visit minerva.assignments_url
       page.accept_confirm do
         click_on "Destroy", match: :first
       end

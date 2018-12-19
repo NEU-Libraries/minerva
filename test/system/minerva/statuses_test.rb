@@ -7,12 +7,12 @@ module Minerva
     end
 
     test "visiting the index" do
-      visit statuses_url
+      visit minerva.statuses_url
       assert_selector "h1", text: "Statuses"
     end
 
     test "creating a Status" do
-      visit statuses_url
+      visit minerva.statuses_url
       click_on "New Status"
 
       fill_in "Title", with: @status.title
@@ -23,7 +23,7 @@ module Minerva
     end
 
     test "updating a Status" do
-      visit statuses_url
+      visit minerva.statuses_url
       click_on "Edit", match: :first
 
       fill_in "Title", with: @status.title
@@ -34,7 +34,7 @@ module Minerva
     end
 
     test "destroying a Status" do
-      visit statuses_url
+      visit minerva.statuses_url
       page.accept_confirm do
         click_on "Destroy", match: :first
       end

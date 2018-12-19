@@ -7,12 +7,12 @@ module Minerva
     end
 
     test "visiting the index" do
-      visit states_url
+      visit minerva.states_url
       assert_selector "h1", text: "States"
     end
 
     test "creating a State" do
-      visit states_url
+      visit minerva.states_url
       click_on "New State"
 
       fill_in "Assignment", with: @state.assignment_id
@@ -28,7 +28,7 @@ module Minerva
     end
 
     test "updating a State" do
-      visit states_url
+      visit minerva.states_url
       click_on "Edit", match: :first
 
       fill_in "Assignment", with: @state.assignment_id
@@ -44,7 +44,7 @@ module Minerva
     end
 
     test "destroying a State" do
-      visit states_url
+      visit minerva.states_url
       page.accept_confirm do
         click_on "Destroy", match: :first
       end

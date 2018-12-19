@@ -7,16 +7,16 @@ module Minerva
     end
 
     test "visiting the index" do
-      visit workflows_url
+      visit minerva.workflows_url
       assert_selector "h1", text: "Workflows"
     end
 
     test "creating a Workflow" do
-      visit workflows_url
+      visit minerva.workflows_url
       click_on "New Workflow"
 
       fill_in "Creator", with: @workflow.creator_id
-      fill_in "Ordered", with: @workflow.ordered
+      @workflow.ordered ? check("Ordered") : uncheck("Ordered")
       fill_in "Project", with: @workflow.project_id
       fill_in "Task list", with: @workflow.task_list
       fill_in "Title", with: @workflow.title
@@ -27,11 +27,11 @@ module Minerva
     end
 
     test "updating a Workflow" do
-      visit workflows_url
+      visit minerva.workflows_url
       click_on "Edit", match: :first
 
       fill_in "Creator", with: @workflow.creator_id
-      fill_in "Ordered", with: @workflow.ordered
+      @workflow.ordered ? check("Ordered") : uncheck("Ordered")
       fill_in "Project", with: @workflow.project_id
       fill_in "Task list", with: @workflow.task_list
       fill_in "Title", with: @workflow.title
@@ -42,7 +42,7 @@ module Minerva
     end
 
     test "destroying a Workflow" do
-      visit workflows_url
+      visit minerva.workflows_url
       page.accept_confirm do
         click_on "Destroy", match: :first
       end

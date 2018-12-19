@@ -7,12 +7,12 @@ module Minerva
     end
 
     test "visiting the index" do
-      visit interfaces_url
+      visit minerva.interfaces_url
       assert_selector "h1", text: "Interfaces"
     end
 
     test "creating a Interface" do
-      visit interfaces_url
+      visit minerva.interfaces_url
       click_on "New Interface"
 
       fill_in "Code point", with: @interface.code_point
@@ -24,7 +24,7 @@ module Minerva
     end
 
     test "updating a Interface" do
-      visit interfaces_url
+      visit minerva.interfaces_url
       click_on "Edit", match: :first
 
       fill_in "Code point", with: @interface.code_point
@@ -36,7 +36,7 @@ module Minerva
     end
 
     test "destroying a Interface" do
-      visit interfaces_url
+      visit minerva.interfaces_url
       page.accept_confirm do
         click_on "Destroy", match: :first
       end
