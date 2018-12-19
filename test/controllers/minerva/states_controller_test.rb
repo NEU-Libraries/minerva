@@ -42,7 +42,7 @@ module Minerva
       end
     end
 
-    test "should destroy state" do
+    test "should not destroy state" do
       assert_raise ActiveRecord::ReadOnlyRecord do
         delete state_url(@state)
       end
