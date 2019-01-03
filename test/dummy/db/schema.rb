@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_18_183815) do
+ActiveRecord::Schema.define(version: 2019_01_03_213735) do
 
   create_table "minerva_assignments", force: :cascade do |t|
     t.string "title"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 2018_12_18_183815) do
   create_table "minerva_interfaces", force: :cascade do |t|
     t.string "title"
     t.string "code_point"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "minerva_projects", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "minerva_roles", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,6 +61,11 @@ ActiveRecord::Schema.define(version: 2018_12_18_183815) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "minerva_users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "minerva_workflows", force: :cascade do |t|
     t.integer "creator_id"
     t.integer "project_id"
@@ -61,6 +76,11 @@ ActiveRecord::Schema.define(version: 2018_12_18_183815) do
     t.datetime "updated_at", null: false
     t.index ["creator_id"], name: "index_minerva_workflows_on_creator_id"
     t.index ["project_id"], name: "index_minerva_workflows_on_project_id"
+  end
+
+  create_table "minerva_works", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

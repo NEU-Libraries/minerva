@@ -1,0 +1,5 @@
+Minerva.creator_class = "Minerva::User"
+Minerva.user_class = "Minerva::User"
+Minerva.project_class = "Minerva::Project"
+Minerva.role_class = "Minerva::Role"
+Minerva.work_class = "Minerva::Work"
