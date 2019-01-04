@@ -6,6 +6,10 @@ module Minerva
 
     setup do
       @state = minerva_states(:one)
+      @creator = minerva_users(:one)
+      @user = minerva_users(:two)
+      @role = minerva_roles(:one)
+      @work = minerva_works(:one)
     end
 
     test "should get index" do
@@ -20,7 +24,7 @@ module Minerva
 
     test "should create state" do
       assert_difference('State.count') do
-        post states_url, params: { state: { assignment_id: @state.assignment_id, creator_id: @state.creator_id, role_id: @state.role_id, status_id: @state.status_id, user_id: @state.user_id, work_id: @state.work_id } }
+        post states_url, params: { state: { assignment_id: @state.assignment_id, creator_id: @creator.id, role_id: @role.id, status_id: @state.status_id, user_id: @user.id, work_id: @work.id } }
       end
 
       assert_redirected_to state_url(State.last)

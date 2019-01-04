@@ -27,19 +27,19 @@ module Minerva
     
     private
       def set_creator
-        self.creator = Minerva.creator_class.find_or_create_by(id: creator_id)
+        self.creator = Minerva.creator_class.find(creator_id)
       end
       
       def set_user
-        self.user = Minerva.user_class.find_or_create_by(id: user_id)
+        self.user = Minerva.user_class.find(user_id)
       end
       
       def set_role
-        self.role = Minerva.role_class.find_or_create_by(id: role_id)
+        self.role = Minerva.role_class.find(role_id)
       end
       
       def set_work
-        self.work = Minerva.work_class.find_or_create_by(id: work_id)
+        self.work = Minerva.work_class.find(work_id)
       end
   end
 end

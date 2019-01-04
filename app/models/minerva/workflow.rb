@@ -11,11 +11,11 @@ module Minerva
     
     private
       def set_creator
-        self.creator = Minerva.creator_class.find_or_create_by(id: creator_id)
+        self.creator = Minerva.creator_class.find(creator_id)
       end
       
       def set_project
-        self.project = Minerva.project_class.find_or_create_by(id: project_id)
+        self.project = Minerva.project_class.find(project_id)
       end
 
   end

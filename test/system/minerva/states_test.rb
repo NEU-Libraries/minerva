@@ -4,6 +4,10 @@ module Minerva
   class StatesTest < ApplicationSystemTestCase
     setup do
       @state = minerva_states(:one)
+      @creator = minerva_users(:one)
+      @user = minerva_users(:two)
+      @role = minerva_roles(:one)
+      @work = minerva_works(:one)
     end
 
     test "visiting the index" do
@@ -16,11 +20,11 @@ module Minerva
       click_on "New State"
 
       fill_in "Assignment", with: @state.assignment_id
-      fill_in "Creator", with: @state.creator_id
-      fill_in "Role", with: @state.role_id
+      fill_in "Creator", with: @creator.id
+      fill_in "Role", with: @role.id
       fill_in "Status", with: @state.status_id
-      fill_in "User", with: @state.user_id
-      fill_in "Work", with: @state.work_id
+      fill_in "User", with: @user.id
+      fill_in "Work", with: @work.id
       click_on "Create State"
 
       assert_text "State was successfully created"

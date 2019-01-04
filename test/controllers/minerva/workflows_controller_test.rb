@@ -6,6 +6,8 @@ module Minerva
 
     setup do
       @workflow = minerva_workflows(:one)
+      @creator = minerva_users(:one)
+      @project = minerva_projects(:one)
     end
 
     test "should get index" do
@@ -20,7 +22,7 @@ module Minerva
 
     test "should create workflow" do
       assert_difference('Workflow.count') do
-        post workflows_url, params: { workflow: { creator_id: @workflow.creator_id, ordered: @workflow.ordered, project_id: @workflow.project_id, task_list: @workflow.task_list, title: @workflow.title } }
+        post workflows_url, params: { workflow: { creator_id: @creator.id, ordered: @workflow.ordered, project_id: @project.id, task_list: @workflow.task_list, title: @workflow.title } }
       end
 
       assert_redirected_to workflow_url(Workflow.last)
@@ -37,7 +39,7 @@ module Minerva
     end
 
     test "should update workflow" do
-      patch workflow_url(@workflow), params: { workflow: { creator_id: @workflow.creator_id, ordered: @workflow.ordered, project_id: @workflow.project_id, task_list: @workflow.task_list, title: @workflow.title } }
+      patch workflow_url(@workflow), params: { workflow: { creator_id: @creator.id, ordered: @workflow.ordered, project_id: @project.id, task_list: @workflow.task_list, title: @workflow.title } }
       assert_redirected_to workflow_url(@workflow)
     end
 
