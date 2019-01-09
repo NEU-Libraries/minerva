@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_07_164946) do
+ActiveRecord::Schema.define(version: 2019_01_07_173209) do
 
   create_table "minerva_assignments", force: :cascade do |t|
     t.string "title"
@@ -31,13 +31,15 @@ ActiveRecord::Schema.define(version: 2019_01_07_164946) do
   create_table "minerva_projects", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "auid"
+    t.string "auid", null: false
+    t.index ["auid"], name: "index_minerva_projects_on_auid", unique: true
   end
 
   create_table "minerva_roles", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "auid"
+    t.string "auid", null: false
+    t.index ["auid"], name: "index_minerva_roles_on_auid", unique: true
   end
 
   create_table "minerva_states", force: :cascade do |t|
@@ -66,7 +68,8 @@ ActiveRecord::Schema.define(version: 2019_01_07_164946) do
   create_table "minerva_users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "auid"
+    t.string "auid", null: false
+    t.index ["auid"], name: "index_minerva_users_on_auid", unique: true
   end
 
   create_table "minerva_workflows", force: :cascade do |t|
@@ -84,7 +87,8 @@ ActiveRecord::Schema.define(version: 2019_01_07_164946) do
   create_table "minerva_works", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "auid"
+    t.string "auid", null: false
+    t.index ["auid"], name: "index_minerva_works_on_auid", unique: true
   end
 
 end
