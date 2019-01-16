@@ -1,8 +1,8 @@
 module Minerva
   class State < ApplicationRecord
     
-    belongs_to :assignment
-    belongs_to :status
+    belongs_to :assignment, :class_name => 'Minerva::Assignment'
+    belongs_to :status, :class_name => 'Minerva::Status'
     belongs_to :role
     belongs_to :work
     belongs_to :user
