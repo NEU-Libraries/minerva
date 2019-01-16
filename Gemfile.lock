@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    minerva (0.1.16)
+    minerva (0.1.17)
       rails (~> 5.2.2)
 
 GEM
@@ -71,9 +71,9 @@ GEM
     crass (1.0.4)
     erubi (1.8.0)
     ffi (1.9.25)
-    globalid (0.4.1)
+    globalid (0.4.2)
       activesupport (>= 4.2.0)
-    i18n (1.5.1)
+    i18n (1.5.2)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
     loofah (2.2.3)
