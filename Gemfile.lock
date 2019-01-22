@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    minerva (0.1.21)
+    minerva (0.1.22)
       rails (> 5.2)
 
 GEM
