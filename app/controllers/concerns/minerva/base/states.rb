@@ -57,6 +57,6 @@ module Minerva::Base::States
 
     # Only allow a trusted parameter "white list" through.
     def state_params
-      params.require(:state).permit(:creator_id, :user_id, :role_id, :work_id, :assignment_id, :status_id)
+      params.require(:state).permit(:creator_id, :user_id, :role_id, :work_id, :interface_id, :status)
     end
 end

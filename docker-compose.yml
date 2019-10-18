@@ -1,0 +1,7 @@
+version: '3.7'
+services:
+  minerva:
+    build: .
+    command: tail -f /dev/null
+    volumes:
+      - .:/minerva

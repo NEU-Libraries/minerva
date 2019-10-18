@@ -1,8 +1,7 @@
 module Minerva
   class State < ApplicationRecord
 
-    belongs_to :assignment
-    belongs_to :status
+    belongs_to :interface
     belongs_to :role
     belongs_to :work
     belongs_to :user
