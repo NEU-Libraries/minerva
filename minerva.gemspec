@@ -11,17 +11,10 @@ Gem::Specification.new do |spec|
   spec.email       = ["dgcliff@northeastern.edu"]
   spec.homepage    = "https://github.com/NEU-Libraries/minerva"
   spec.summary     = "Minerva is a Rails engine for basic assignment workflow."
-  spec.description = "In concert with Samvera and Valkyrie componenets, Minerva aims to be a viable coordination tool, allowing administration users to describe manual and automated workflows for individuals to follow and apply." 
+  spec.description = "In concert with Samvera and Valkyrie componenets, Minerva aims to be a viable coordination tool, allowing administration users to describe manual and automated workflows for individuals to follow and apply."
   spec.license     = "MIT"
 
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "rails", "> 5.2"
-
-  spec.add_development_dependency "sqlite3"
-  spec.add_development_dependency "capybara"
-  spec.add_development_dependency "selenium-webdriver"
-  spec.add_development_dependency "chromedriver-helper"
-  spec.add_development_dependency "puma"
-  spec.add_development_dependency "tzinfo-data"
 end
