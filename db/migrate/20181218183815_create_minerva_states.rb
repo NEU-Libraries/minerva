@@ -14,8 +14,8 @@ class CreateMinervaStates < ActiveRecord::Migration[5.2]
     add_index :minerva_states, :user_id
     add_index :minerva_states, :role_id
     add_index :minerva_states, :work_id
+    add_index :minerva_states, :interface_id
 
     add_foreign_key :minerva_states, :minerva_interfaces, column: :interface_id
-    add_index :minerva_interfaces, :interface_id
   end
 end
