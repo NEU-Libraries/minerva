@@ -1,10 +1,10 @@
 module Minerva
   class State < ApplicationRecord
 
-    belongs_to :interface
+    belongs_to :interface, optional: true
+    belongs_to :user, optional: true
     belongs_to :role
     belongs_to :work
-    belongs_to :user
 
     belongs_to :creator, class_name: "Minerva::User"
 
